@@ -3,20 +3,20 @@ html
   head
     title Gulp and Jade Playground
     meta(charset="utf-8")
-    link(src="/css/main.css", rel="stylesheet")
+    link(rel="stylesheet", href="css/main.css")
 
   body
-    include includes/mixin.jade
-    
+    include includes/mixin.pug
+
     mixin block
-      p#par1 Mixin # [strong Title 1]
+      p#par1 Mixin #[strong Title 1]
       p#par2 Mixin Title 2
       //
         img(src="../img/cute-kitty.jpg", alt="Kitten")
         img(src="../img/kitty.png", alt="Kitten")
-      
-    + block
-    
-    
-    
+
+    +block
+
+
+
     script(src="./js/bundle.js")

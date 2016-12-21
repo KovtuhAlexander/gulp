@@ -1,6 +1,6 @@
 var gulp      	 = require('gulp'),
 		del          = require('del'),
-		jade				 = require('gulp-jade'),
+		pug				   = require('gulp-pug'),
     sass         = require('gulp-sass'),
 		cache        = require('gulp-cache'),
 		concat       = require('gulp-concat'),
@@ -17,10 +17,10 @@ var gulp      	 = require('gulp'),
     browserSync  = require('browser-sync'),
     autoprefixer = require('gulp-autoprefixer');
 
-gulp.task('jade', function(){
-	gulp.src('src/jade/*.jade')
+gulp.task('pug', function(){
+	gulp.src('src/pug/*.pug')
 			.pipe(plumber())
-			.pipe(jade({
+			.pipe(pug({
 				pretty: true
 			}))
 			.pipe(gulp.dest('./src'))
@@ -59,9 +59,9 @@ gulp.task('browser-sync', function() {
 });
 
 
-gulp.task('watch', ['browser-sync', 'jade', 'scripts'], function() {
+gulp.task('watch', ['browser-sync', 'pug', 'scripts'], function() {
     gulp.watch('src/scss/**/*.scss', ['sass']);
-		gulp.watch('src/jade/**/*.jade', ['jade']);
+		gulp.watch('src/pug/**/*.pug', ['pug']);
     gulp.watch('src/*.html', browserSync.reload);
     gulp.watch('src/js/**/*.js', browserSync.reload);
 });
