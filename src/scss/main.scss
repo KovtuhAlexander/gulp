@@ -1,7 +1,2 @@
-body {
-  background-color: #c4f6d5;
-}
-
-.round {
-  display: flex;
-}
+@include "var";
+@include "base";
